@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Terrain terrain;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +15,17 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void setPosition(Vector3 toSet)
+    {
+        transform.position = toSet;
+
+        Debug.Log(toSet);
+    }
+
+    public void move(Vector3 toMove, float step)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, toMove, step);
     }
 }
